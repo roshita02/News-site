@@ -10,10 +10,18 @@ Route::group(['namespace' => 'Front'],function(){
 });
 
 Route::group(['namespace' => 'Back','prefix'=>'admin'],function(){
+    Route::any('login','UserController@login')->name('login');
+});
+
+
+Route::group(['namespace' => 'Back','prefix'=>'admin'],function(){
   Route::any('/','DashboardController@index')->name('dash');
+
 Route::group(['prefix'=>'user'],function(){
     Route::any('/','UserController@user')->name('users');
     Route::any('add','UserController@addUser')->name('add');
+    Route::any('delete/{id?}','UserController@delete')->name('delete');
+
 });
 Route::group(['prefix'=>'news'],function()
 {

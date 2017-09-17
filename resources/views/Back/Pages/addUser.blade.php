@@ -1,6 +1,6 @@
 @extends('Back.MasterPage.master')
 @section('content')
-    <div class="content-wrapper">
+    <div class="mainPage content-wrapper">
         <section class="content">
             <h1>Add user</h1>
             @if ($errors->any())
@@ -57,4 +57,4 @@
             </form>
         </section>
     </div>
-@stop
+@endsection

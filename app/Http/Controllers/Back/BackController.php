@@ -11,6 +11,7 @@ class BackController extends Controller
     public $page;
     public function __construct()
     {
+        $this->data('title',$this->title('admin'));
         $this->page=$this->appType.'Pages.';
     }
 }

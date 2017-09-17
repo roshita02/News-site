@@ -15,6 +15,7 @@ class AppController extends FrontController
 
     public function index()
     {
-        return view($this->page.'.home');
+        $this->data('title',$this->title('Welcome'));
+        return view($this->page.'.home',$this->data);
     }
 }

@@ -10,13 +10,14 @@ class NewsController extends BackController
 {
     public function news()
     {
-        return view($this->page.'showNews');
+        $this->data('newsData',User::paginate(2));
+        return view($this->page.'showNews',$this->data);
     }
     public function addnews(Request $request)
     {
         if($request->isMethod('get'))
         {
-            return view($this->page.'addNews');
+            return view($this->page.'addNews',$this->data);
         }
         if($request->isMethod('post'))
         {

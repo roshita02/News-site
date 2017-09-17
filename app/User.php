@@ -3,8 +3,8 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
-
-class User extends Model
+use \Illuminate\Foundation\Auth\User as LoginUser;
+class User extends LoginUser
 {
     protected $fillable=['name','email','image','password'];
 }
