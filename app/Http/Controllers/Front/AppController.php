@@ -19,4 +19,21 @@ class AppController extends FrontController
         $this->data('newsData',News::paginate(3));
         return view($this->page.'.welcome',$this->data);
     }
+    public function politics()
+    {
+        $this->data('newsData',News::paginate(3));
+        return view($this->page.'.politics',$this->data);
+    }
+    public function sports()
+    {
+        $this->data('newsData',News::paginate(3));
+        return view($this->page.'.sports',$this->data);
+    }
+    public function entertainment()
+    {
+        $this->data('newsData',News::paginate(3));
+        return view($this->page.'.entertainment',$this->data);
+    }
+
+
 }

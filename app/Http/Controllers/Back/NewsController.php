@@ -71,9 +71,6 @@ class NewsController extends BackController
         }
 
     }
-    public function sports()
-    {
-        return view($this->page.'category.sports');
-    }
+
 
 }

@@ -7,9 +7,12 @@
 
 Route::group(['namespace' => 'Front'],function(){
   Route::any('/','AppController@index');
-    Route::any('sports','NewsController@sports')->name('sports');
-});
+    Route::any('politics','AppController@politics');
+    Route::any('sports','AppController@sports');
+    Route::any('entertainment','AppController@entertainment');
 
+
+});
 Route::group(['namespace' => 'Back'],function(){
     Route::any('login','UserController@login')->name('login');
 
@@ -34,6 +37,9 @@ Route::group(['prefix'=>'news'],function()
     Route::any('delete/{id?}','NewsController@delete')->name('delete');
     Route::any('edit/{id?}','NewsController@edit')->name('edit');
 });
+    Route::group(['prefix'=>'gallery'],function (){
+        Route::any('addGallery','GalleryController@addGallery')->name('addGallery');
+    });
     Route::any('logout','UserController@logout')->name('logout');
 
 });

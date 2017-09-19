@@ -27,34 +27,35 @@
             <span class="sr-only">Next</span>
         </a>
     </div>
-
-
-   <br><br>
+   <br>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-md-10 mx-auto">
+                    <h1>Top News</h1><hr>
+                </div>
+            </div>
+        </div>
     @foreach($newsData as $news)
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-md-10 mx-auto">
                 <div class="post-preview">
                     <a href="">
-                        <h2 class="post-title">
+                        <h3 class="post-title">
                             {{$news->title}}
-                        </h2>
-                        <h3 class="post-subtitle">
-
                         </h3>
                         <h8 class="post-subtitle">
-                            {{substr($news->descriptiom,0,70)}}.....
+                            {{substr($news->descriptiom,0,100)}}.....
 
                             <a href="#" class="read_more">Read More</a><br/>
 
-
                         </h8>
-                        <br>
-
                     </a>
 
-                    <p class="post-meta">Posted at {{$news->created_at}}
-                       </p>
+                    <p class="post-meta">Posted at: {{$news->created_at}}
+                        <br>
+                   Category: {{$news->category}}
+                    </p>
                 </div>
                 <hr>
             </div>
@@ -66,4 +67,3 @@
     <div class="col-lg-8 col-md-10 mx-auto">
         {{$newsData->render()}}
     </div>
-    @stop

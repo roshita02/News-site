@@ -39,13 +39,13 @@
                 </li>
 {{--///should be dropdown--}}
                 <li class="nav-item">
-                    <a class="nav-link" href="{{route('sports')}}">Sports</a>
+                    <a class="nav-link" href="/sports">Sports</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="">Politics</a>
+                    <a class="nav-link" href="/politics">Politics</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="">Entertainment</a>
+                    <a class="nav-link" href="/entertainment">Entertainment</a>
                 </li>
 
                 <li class="nav-item">

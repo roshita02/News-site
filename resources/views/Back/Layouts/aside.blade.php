@@ -58,6 +58,7 @@
                     <li><a href="{{route('new')}}"><i class="fa fa-circle-o"></i> Show news</a></li>
                 </ul>
             </li>
+
     </section>
     <!-- /.sidebar -->
 </aside>
