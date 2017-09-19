@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Front;
 
+use App\News;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -15,7 +16,7 @@ class AppController extends FrontController
 
     public function index()
     {
-        $this->data('title',$this->title('Welcome'));
-        return view($this->page.'.home',$this->data);
+        $this->data('newsData',News::paginate(3));
+        return view($this->page.'.welcome',$this->data);
     }
 }

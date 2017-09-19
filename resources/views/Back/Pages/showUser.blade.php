@@ -23,7 +23,7 @@
                   <td>{{$data->email}}</td>
                   <td><img src="{{URL::to('UserImage/'.$data->image)}}" width="50" alt=""></td>
                   <td>
-                      <a href="{{route('delete').'/'.$data->id}}" class="btn btn-danger btn-sm">Delete</a>
+                      <a href="{{route('del').'/'.$data->id}}" class="btn btn-danger btn-sm">Delete</a>
                   </td>
               </tr>
                 @empty

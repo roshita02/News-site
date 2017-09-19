@@ -1,8 +1,9 @@
 @extends('Back.MasterPage.master')
 @section('content')
-    <div class="mainPage content-wrapper">
+    <div class="mainPageManage content-wrapper">
         <section class="content">
-            <h1>Add user</h1>
+            <h1><i class="fa fa fa-user"></i> Add News</h1>
+            <hr>
             @if ($errors->any())
                 <div class="alert alert-danger">
                     <ul>
@@ -12,8 +13,6 @@
                     </ul>
                 </div>
             @endif
-
-            <hr>
             <form action="{{route('add')}}" method="post" enctype="multipart/form-data">
                 {{csrf_field()}}
             <div class="col-md-6">

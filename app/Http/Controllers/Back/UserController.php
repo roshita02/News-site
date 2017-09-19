@@ -5,6 +5,9 @@ namespace App\Http\Controllers\Back;
 use App\User;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
+
+
 
 class UserController extends BackController
 {
@@ -13,6 +16,7 @@ class UserController extends BackController
     {
         $this->data('userData', User::paginate(5));
         return view($this->page . 'showUser', $this->data);
+
     }
 
     public function addUser(Request $request)
@@ -58,7 +62,6 @@ class UserController extends BackController
         if ($userData->delete()) {
             return redirect()->route('users')->with('success', 'User was deleted');
         }
-
     }
 
     public function login(Request $request)
@@ -71,7 +74,7 @@ class UserController extends BackController
             $password = $request->password;
             $rem = isset($request->remember) ? true : false;
             if (Auth::attempt(['email' => $email, 'password' => $password], $rem)) {
-                return redirect()->intended('dash');
+                return redirect()->intended('admin');
             } else {
                 echo " email & password not valid";
             }
@@ -81,8 +84,10 @@ class UserController extends BackController
 
     public function logout()
     {
-        if (Auth::logout()) {
-            return redirect()->route('login');
-        }
+        Auth::logout();
+            return redirect('login');
+
     }
+
+
 }

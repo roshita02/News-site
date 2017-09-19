@@ -5,10 +5,10 @@
         <!-- Sidebar user panel -->
         <div class="user-panel">
             <div class="pull-left image">
-                <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
+                <img src="{{URL::to('UserImage/'.Auth::user()->image)}}" class="user-image" alt="User Image">
             </div>
             <div class="pull-left info">
-                <p>Alexander Pierce</p>
+                <p>{{Auth::user()->name}}</p>
                 <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
             </div>
         </div>
@@ -55,19 +55,8 @@
                 </a>
                 <ul class="treeview-menu">
                     <li class="active"><a href="{{route('addnews')}}"><i class="fa fa-circle-o"></i> Add news</a></li>
-                    <li><a href="{{route('news')}}"><i class="fa fa-circle-o"></i> Show news</a></li>
+                    <li><a href="{{route('new')}}"><i class="fa fa-circle-o"></i> Show news</a></li>
                 </ul>
-            </li>
-
-            <li>
-                <a href="pages/mailbox/mailbox.html">
-                    <i class="fa fa-envelope"></i> <span>Mailbox</span>
-                    <span class="pull-right-container">
-              <small class="label pull-right bg-yellow">12</small>
-              <small class="label pull-right bg-green">16</small>
-              <small class="label pull-right bg-red">5</small>
-            </span>
-                </a>
             </li>
     </section>
     <!-- /.sidebar -->
